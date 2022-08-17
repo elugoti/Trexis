@@ -1,6 +1,6 @@
-package com.c1ctech.mvvmwithnetworksource
+package com.trexis.test
 
-import com.c1ctech.mvvmwithnetworksource.ui.activities.LoginActivity
+import com.trexis.test.ui.activities.LoginActivity
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test

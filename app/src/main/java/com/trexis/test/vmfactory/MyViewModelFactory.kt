@@ -1,4 +1,4 @@
-package com.trexis.test
+package com.trexis.test.vmfactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

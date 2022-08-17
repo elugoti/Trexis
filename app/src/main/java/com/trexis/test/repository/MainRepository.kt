@@ -1,6 +1,6 @@
-package com.c1ctech.mvvmwithnetworksource.repository
+package com.trexis.test.repository
 
-import com.c1ctech.mvvmwithnetworksource.RetrofitService
+import com.trexis.test.network.RetrofitService
 
 class MainRepository constructor(private val retrofitService: RetrofitService) {
 

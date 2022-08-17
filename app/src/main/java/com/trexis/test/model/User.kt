@@ -1,4 +1,4 @@
-package com.c1ctech.mvvmwithnetworksource.model
+package com.trexis.test.model
 
 data class User(
     var username: String? = null,

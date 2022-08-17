@@ -1,4 +1,4 @@
-package com.c1ctech.mvvmwithnetworksource
+package com.trexis.test
 
 import com.google.gson.annotations.SerializedName
 

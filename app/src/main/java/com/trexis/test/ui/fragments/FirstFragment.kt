@@ -1,11 +1,11 @@
-package com.c1ctech.mvvmwithnetworksource.ui.fragments
+package com.trexis.test.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.c1ctech.mvvmwithnetworksource.R
+import com.trexis.test.R
 
 
 class FirstFragment : Fragment() {

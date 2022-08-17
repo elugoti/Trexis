@@ -1,11 +1,11 @@
-package com.c1ctech.mvvmwithnetworksource.viewmodel
+package com.trexis.test.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.c1ctech.mvvmwithnetworksource.UserResp
-import com.c1ctech.mvvmwithnetworksource.model.User
-import com.c1ctech.mvvmwithnetworksource.repository.MainRepository
+import com.trexis.test.UserResp
+import com.trexis.test.model.User
+import com.trexis.test.repository.MainRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

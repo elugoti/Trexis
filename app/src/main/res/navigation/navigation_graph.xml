@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/navigation_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment1">
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.trexis.test.ui.fragments.FirstFragment"
+        android:label="fragment_fragment1"
+        tools:layout="@layout/fragment_user1" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.trexis.test.ui.fragments.SecondFragment"
+        android:label="fragment_fragment2"
+        tools:layout="@layout/fragment_user2" >
+        <action
+            android:id="@+id/action_fragment2_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.trexis.test.ui.fragments.ThirdFragment"
+        android:label="fragment_fragment3"
+        tools:layout="@layout/fragment_user3" >
+        <action
+            android:id="@+id/action_fragment3_to_fragment_detail"
+            app:destination="@id/fragment_detail" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/fragment_detail"
+        android:name="com.trexis.test.ui.fragments.DetailFragment"
+        android:label="fragment_fragment3"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

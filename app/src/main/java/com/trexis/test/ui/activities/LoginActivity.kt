@@ -1,4 +1,4 @@
-package com.c1ctech.mvvmwithnetworksource.ui.activities
+package com.trexis.test.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.c1ctech.mvvmwithnetworksource.MyViewModelFactory
-import com.c1ctech.mvvmwithnetworksource.RetrofitService
-import com.c1ctech.mvvmwithnetworksource.databinding.ActivityLoginBinding
-import com.c1ctech.mvvmwithnetworksource.repository.MainRepository
-import com.c1ctech.mvvmwithnetworksource.viewmodel.MainViewModel
+import com.trexis.test.vmfactory.MyViewModelFactory
+import com.trexis.test.network.RetrofitService
+import com.trexis.test.databinding.ActivityLoginBinding
+import com.trexis.test.repository.MainRepository
+import com.trexis.test.viewmodel.MainViewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding

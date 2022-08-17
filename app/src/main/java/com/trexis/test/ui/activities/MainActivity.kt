@@ -1,4 +1,4 @@
-package com.c1ctech.mvvmwithnetworksource.ui.activities
+package com.trexis.test.ui.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -8,13 +8,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
-import com.c1ctech.mvvmwithnetworksource.MainAdapter
-import com.c1ctech.mvvmwithnetworksource.MyViewModelFactory
-import com.c1ctech.mvvmwithnetworksource.R
-import com.c1ctech.mvvmwithnetworksource.RetrofitService
-import com.c1ctech.mvvmwithnetworksource.databinding.ActivityMainBinding
-import com.c1ctech.mvvmwithnetworksource.repository.MainRepository
-import com.c1ctech.mvvmwithnetworksource.viewmodel.MainViewModel
+import com.trexis.test.MainAdapter
+import com.trexis.test.vmfactory.MyViewModelFactory
+import com.trexis.test.R
+import com.trexis.test.network.RetrofitService
+import com.trexis.test.databinding.ActivityMainBinding
+import com.trexis.test.repository.MainRepository
+import com.trexis.test.viewmodel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: MainViewModel
 
     private val retrofitService = RetrofitService.getInstance()
-    val adapter = MainAdapter()
+    private val adapter = MainAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerview.adapter = adapter
 
         //the observer will only receive events if the owner(activity) is in active state
-        //invoked when movieList data changes
+        //invoked when userlist data changes
         viewModel.usersList.observe(this, Observer {
-            Log.d(TAG, "movieList: $it")
+            Log.d(TAG, "userlist: $it")
             adapter.setDataList(it)
             binding.progressCircular.visibility = View.GONE
         })

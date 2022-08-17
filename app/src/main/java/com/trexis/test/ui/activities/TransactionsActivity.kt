@@ -1,4 +1,4 @@
-package com.c1ctech.mvvmwithnetworksource.ui.activities
+package com.trexis.test.ui.activities
 
 import android.os.Bundle
 import android.util.Log
@@ -6,13 +6,13 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.c1ctech.mvvmwithnetworksource.MainAdapter
-import com.c1ctech.mvvmwithnetworksource.MyViewModelFactory
-import com.c1ctech.mvvmwithnetworksource.RetrofitService
-import com.c1ctech.mvvmwithnetworksource.UserResp
-import com.c1ctech.mvvmwithnetworksource.databinding.ActivityTransactionsBinding
-import com.c1ctech.mvvmwithnetworksource.repository.MainRepository
-import com.c1ctech.mvvmwithnetworksource.viewmodel.MainViewModel
+import com.trexis.test.MainAdapter
+import com.trexis.test.vmfactory.MyViewModelFactory
+import com.trexis.test.network.RetrofitService
+import com.trexis.test.UserResp
+import com.trexis.test.databinding.ActivityTransactionsBinding
+import com.trexis.test.repository.MainRepository
+import com.trexis.test.viewmodel.MainViewModel
 import com.google.gson.Gson
 
 class TransactionsActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class TransactionsActivity : AppCompatActivity() {
     lateinit var viewModel: MainViewModel
 
     private val retrofitService = RetrofitService.getInstance()
-    val adapter = MainAdapter()
+    private val adapter = MainAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +49,7 @@ class TransactionsActivity : AppCompatActivity() {
         binding.recyclerview.adapter = adapter
 
         //the observer will only receive events if the owner(activity) is in active state
-        //invoked when movieList data changes
+        //invoked when transactionDetails data changes
         viewModel.transactionDetails.observe(this, Observer {
             Log.d(TAG, "txnList: $it")
             adapter.setDataList(it)
