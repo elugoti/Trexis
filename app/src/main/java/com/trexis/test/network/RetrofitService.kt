@@ -1,14 +1,21 @@
-package com.c1ctech.mvvmwithnetworksource
+package com.trexis.test
 
-import com.c1ctech.mvvmwithnetworksource.model.MovieList
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
+import retrofit2.http.*
 
 interface RetrofitService {
-    @GET("api?s=batman")
-    fun getAllMovies(): Call<MovieList>
+
+    @FormUrlEncoded
+    @POST("login")
+    fun validateUser(@Field("username") username : String, @Field("password") password: String): Call<Void>
+
+    @GET("accounts")
+    fun getAllUsers(): Call<List<UserResp>>
+
+    @GET("transactions")
+    fun getTransactionDetails(@Query("accountId") accountId:String): Call<List<UserResp>>
 
     companion object {
 
@@ -19,7 +26,7 @@ interface RetrofitService {
 
             if (retrofitService == null) {
                 val retrofit = Retrofit.Builder()
-                    .baseUrl("https://fake-movie-database-api.herokuapp.com/")
+                    .baseUrl("http://192.168.29.177:5555/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 retrofitService = retrofit.create(RetrofitService::class.java)

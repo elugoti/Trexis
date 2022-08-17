@@ -1,9 +1,9 @@
-package com.c1ctech.mvvmwithnetworksource
+package com.trexis.test
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.c1ctech.mvvmwithnetworksource.repository.MainRepository
-import com.c1ctech.mvvmwithnetworksource.viewmodel.MainViewModel
+import com.trexis.test.repository.MainRepository
+import com.trexis.test.viewmodel.MainViewModel
 
 class MyViewModelFactory constructor(private val repository: MainRepository) :
     ViewModelProvider.Factory {

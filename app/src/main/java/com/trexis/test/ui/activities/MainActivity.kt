@@ -1,13 +1,22 @@
-package com.c1ctech.mvvmwithnetworksource
+package com.c1ctech.mvvmwithnetworksource.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import com.c1ctech.mvvmwithnetworksource.MainAdapter
+import com.c1ctech.mvvmwithnetworksource.MyViewModelFactory
+import com.c1ctech.mvvmwithnetworksource.R
+import com.c1ctech.mvvmwithnetworksource.RetrofitService
 import com.c1ctech.mvvmwithnetworksource.databinding.ActivityMainBinding
 import com.c1ctech.mvvmwithnetworksource.repository.MainRepository
 import com.c1ctech.mvvmwithnetworksource.viewmodel.MainViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -34,16 +43,24 @@ class MainActivity : AppCompatActivity() {
 
         //the observer will only receive events if the owner(activity) is in active state
         //invoked when movieList data changes
-        viewModel.movieList.observe(this, Observer {
+        viewModel.usersList.observe(this, Observer {
             Log.d(TAG, "movieList: $it")
-            adapter.setMovieList(it)
+            adapter.setDataList(it)
+            binding.progressCircular.visibility = View.GONE
         })
 
         //invoked when a network exception occurred
         viewModel.errorMessage.observe(this, Observer {
             Log.d(TAG, "errorMessage: $it")
+            binding.progressCircular.visibility = View.GONE
         })
 
-        viewModel.getAllMovies()
+        viewModel.getUsersList()
+
+        val navController = Navigation.findNavController(this, R.id.activity_main_nav_host_fragment)
+        val bottomNavigationView =
+            findViewById<BottomNavigationView>(R.id.activity_main_bottom_navigation_view)
+        NavigationUI.setupWithNavController(bottomNavigationView, navController)
+
     }
 }
